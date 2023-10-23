@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1698061390 source:c:\users\geno\documents\start_up\menu\main.c
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+

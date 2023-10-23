@@ -1,0 +1,160 @@
+#include <stdio.h>
+
+// Function to print the cube of any number
+void printCube(int num) {
+    int cube = num * num * num;
+    printf("The cube of %d is %d\n", num, cube);
+}
+
+// Function to check if a character is an alphabet
+int isAlphabet(char ch) {
+    if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+// Function to check if a number is positive or negative
+void checkPositiveNegative(int num) {
+    if (num > 0) {
+        printf("%d is a positive number\n", num);
+    } else if (num < 0) {
+        printf("%d is a negative number\n", num);
+    } else {
+        printf("%d is neither positive nor negative\n", num);
+    }
+}
+
+// Function to perform arithmetic operations
+double performOperation(char operation, double num1, double num2) {
+    switch (operation) {
+        case '+':
+            return num1 + num2;
+        case '-':
+            return num1 - num2;
+        case '*':
+            return num1 * num2;
+        case '/':
+            if (num2 != 0) {
+                return num1 / num2;
+            } else {
+                printf("Error: Division by zero\n");
+                return 0.0;
+            }
+        default:
+            printf("Error: Invalid operation\n");
+            return 0.0;
+    }
+}
+
+// Function to check if a number is even or odd
+int isEvenOrOdd(int num) {
+    if (num % 2 == 0) {
+        return 0; // Even
+    } else {
+        return 1; // Odd
+    }
+}
+
+// Function to convert a letter from lowercase to uppercase
+char toUpperCase(char ch) {
+    if (ch >= 'a' && ch <= 'z') {
+        return ch - ('a' - 'A');
+    } else {
+        return ch;
+    }
+}
+
+// Function to check if the first number is a multiple of the second
+int isMultiple(int num1, int num2) {
+    if (num2 != 0 && num1 % num2 == 0) {
+        return 1; // num1 is a multiple of num2
+    } else {
+        return 0; // num1 is not a multiple of num2
+    }
+}
+
+// Function to display prime numbers between two intervals
+void displayPrimes(int start, int end) {
+    int isPrime;
+
+    printf("Prime numbers between %d and %d are: ", start, end);
+    for (int num = start; num <= end; num++) {
+        if (num <= 1)
+            continue;
+
+        isPrime = 1;
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+
+        if (isPrime)
+            printf("%d, ", num);
+    }
+    printf("\n");
+}
+
+// Function to swap the values of two integer numbers
+void swapIntegers(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+// Function to count the number of holes in a given number
+int countHoles(int num) {
+    int holeCount = 0;
+    while (num > 0) {
+        int digit = num % 10;
+        switch (digit) {
+            case 0: case 4: case 6: case 9:
+                holeCount += 1;
+                break;
+            case 8:
+                holeCount += 2;
+                break;
+            default:
+                break;
+        }
+        num /= 10;
+    }
+    return holeCount;
+}
+
+// Function to check if a number is a power of 2
+int isPowerOf2(int num) {
+    return (num != 0) && ((num & (num - 1)) == 0);
+}
+
+// Function to calculate heater activation time based on input temperature
+int calculateHeatingTime(int temperature) {
+    if (temperature >= 0 && temperature < 30) {
+        return 7;
+    } else if (temperature >= 30 && temperature < 60) {
+        return 5;
+    } else if (temperature >= 60 && temperature < 90) {
+        return 3;
+    } else if (temperature >= 90 && temperature <= 100) {
+        return 1;
+    } else {
+        return 0; // Invalid temperature
+    }
+}
+
+// Function to calculate the floor of the sum of two floating-point numbers
+int floorSum(float num1, float num2) {
+    return (int)(num1 + num2);
+}
+
+// Function to calculate the Fibonacci series using recursion
+int fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}

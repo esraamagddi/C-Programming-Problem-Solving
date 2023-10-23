@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1697632398 source:c:\users\geno\documents\start_up\lecture2\2\main2.c
+	<stdio.h>
+	<stdlib.h>
+
+1697643144 source:c:\users\geno\documents\start_up\lab2_2\main.c
+	<stdio.h>
+

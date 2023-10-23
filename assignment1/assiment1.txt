@@ -1,0 +1,366 @@
+Assignment 1 Solutions:
+
+(1) Write a program that takes two integers from the user and prints the results of this equation:
+Result = ((num1 + num2) * 3) - 10
+Solution:
+#include <stdio.h>
+int main() {
+    int num1, num2, result;
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);
+    result = ((num1 + num2) * 3) - 10;
+    printf("Result: %d\n", result);
+    return 0;
+}
+
+(2) Write a program that prints your name and your grade in a new line.
+Solution:
+#include <stdio.h>
+int main() {
+    printf("Your Name\n");
+    printf("Your Grade\n");
+    return 0;
+}
+
+(3) Write a program for converting temperature from degrees Celsius to degrees Fahrenheit.
+Solution:
+#include <stdio.h>
+int main() {
+    float celsius, fahrenheit;
+    printf("Enter temperature in Celsius: ");
+    scanf("%f", &celsius);
+    fahrenheit = (celsius * 9/5) + 32;
+    printf("Temperature in Fahrenheit: %f\n", fahrenheit);
+    return 0;
+}
+
+(4) Write a program that reads the radius of a circle and calculates the area and circumference.
+Solution:
+#include <stdio.h>
+int main() {
+    float radius, area, circumference;
+    printf("Enter the radius of the circle: ");
+    scanf("%f", &radius);
+    area = 3.14159265 * radius * radius;
+    circumference = 2 * 3.14159265 * radius;
+    printf("Area: %f\n", area);
+    printf("Circumference: %f\n", circumference);
+    return 0;
+}
+
+(5) Write a program to print the ASCII value of a character input by the user.
+Solution:
+#include <stdio.h>
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
+    printf("ASCII value of %c is %d\n", ch, ch);
+    return 0;
+}
+
+(6) Write a program to print the relation between two integer numbers (equal, not equal, higher value).
+Solution:
+#include <stdio.h>
+int main() {
+    int num1, num2;
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);
+    if (num1 == num2) {
+        printf("The numbers are equal.\n");
+    } else {
+        printf("The numbers are not equal.\n");
+        if (num1 > num2) {
+            printf("%d is greater than %d.\n", num1, num2);
+        } else {
+            printf("%d is greater than %d.\n", num2, num1);
+        }
+    }
+    return 0;
+}
+
+(7) Write a program that takes three integers and prints out the smallest number.
+Solution:
+#include <stdio.h>
+int main() {
+    int num1, num2, num3, smallest;
+    printf("Enter three integers: ");
+    scanf("%d %d %d", &num1, &num2, &num3);
+    smallest = num1;
+    if (num2 < smallest) {
+        smallest = num2;
+    }
+    if (num3 < smallest) {
+        smallest = num3;
+    }
+    printf("The smallest number is: %d\n", smallest);
+    return 0;
+}
+
+(8) Write a program that reads a positive integer and checks if it is a perfect square.
+Solution:
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int num;
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+    if (num < 1) {
+        printf("Not a positive integer.\n");
+    } else {
+        int sqrtNum = sqrt(num);
+        if (sqrtNum * sqrtNum == num) {
+            printf("%d is a perfect square.\n", num);
+        } else {
+            printf("%d is not a perfect square.\n", num);
+        }
+    }
+    return 0;
+}
+
+(9) Write a program that reads a student grade percentage and prints "Excellent" for 85 or greater, "Very Good" for 75 or greater, "Good" for 65, "Pass" for 50, "Fail" for less than 50.
+Solution:
+#include <stdio.h>
+int main() {
+    float grade;
+    printf("Enter the student's grade percentage: ");
+    scanf("%f", &grade);
+    if (grade >= 85) {
+        printf("Excellent\n");
+    } else if (grade >= 75) {
+        printf("Very Good\n");
+    } else if (grade >= 65) {
+        printf("Good\n");
+    } else if (grade >= 50) {
+        printf("Pass\n");
+    } else {
+        printf("Fail\n");
+    }
+    return 0;
+}
+
+(10) Write a program to make a simple calculator using switch-case. The calculator takes the operation (+ or – or * or /) and takes the two input arguments and prints the results.
+Solution:
+#include <stdio.h>
+int main() {
+    char operation;
+    float num1, num2, result;
+    printf("Enter an operation (+, -, *, /): ");
+    scanf(" %c", &operation);
+    printf("Enter two numbers: ");
+    scanf("%f %f", &num1, &num2);
+    switch (operation) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            if (num2 != 0) {
+                result = num1 / num2;
+            } else {
+                printf("Division by zero is not allowed.\n");
+                return 1; // Exit with an error code
+            }
+            break;
+        default:
+            printf("Invalid operation.\n");
+            return 1; // Exit with an error code
+    }
+    printf("Result: %f\n", result);
+    return 0;
+}
+
+(11) Print the sum of the first 100 integers. (With data validation)
+Solution:
+#include <stdio.h>
+int main() {
+    int sum = 0;
+    for (int i = 1; i <= 100; i++) {
+        sum += i;
+    }
+    printf("Sum of the first 100 integers: %d\n", sum);
+    return 0;
+}
+
+(12) Write a program that reads a positive integer and computes the factorial.
+Solution:
+#include <stdio.h>
+int main() {
+    int n;
+    long long factorial = 1;
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+    if (n < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    } else {
+        for (int i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+        printf("Factorial of %d = %lld\n", n, factorial);
+    }
+    return 0;
+}
+
+(13) Write a program that reads a positive integer and checks if it is a prime.
+Solution:
+#include <stdio.h>
+#include <stdbool.h>
+int main() {
+    int n;
+    bool isPrime = true;
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+    if (n <= 1) {
+        isPrime = false;
+    } else {
+        for (int i = 2; i <= n / 2; i++) {
+            if (n % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+    if (isPrime) {
+        printf("%d is a prime number.\n", n);
+    } else {
+        printf("%d is not a prime number.\n", n);
+    }
+    return 0;
+}
+
+(14) Write a program to display English alphabets from A to Z.
+Solution:
+#include <stdio.h>
+int main() {
+    char letter;
+    for (letter = 'A'; letter <= 'Z'; letter++) {
+        printf("%c ", letter);
+    }
+    printf("\n");
+    return 0;
+}
+
+(15) Write a program to calculate the power of a number. The number and its power are input from the user.
+Solution:
+#include <stdio.h>
+#include <math.h>
+int main() {
+    double base, exponent, result;
+    printf("Enter the base number: ");
+    scanf("%lf", &base);
+    printf("Enter the exponent: ");
+    scanf("%lf", &exponent);
+    result = pow(base, exponent);
+    printf("%lf^%lf = %lf\n", base, exponent, result);
+    return 0;
+}
+
+(16) Write a program to reverse a number.
+Solution:
+#include <stdio.h>
+int main() {
+    int number, reversedNumber = 0;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    while (number != 0) {
+        reversedNumber = reversedNumber * 10 + number % 10;
+        number /= 10;
+    }
+    printf("Reversed number: %d\n", reversedNumber);
+    return 0;
+}
+
+(17) Write a program to count the number of digits in a decimal number.
+Solution:
+#include <stdio.h>
+int main() {
+    long long n;
+    int count = 0;
+    printf("Enter a decimal number: ");
+    scanf("%lld", &n);
+    while (n != 0) {
+        n /= 10;
+        count++;
+    }
+    printf("Number of digits: %d\n", count);
+    return 0;
+}
+
+(18) Write a program to display a half pyramid using a stars pattern.
+Solution:
+#include <stdio.h>
+int main() {
+    int rows;
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+(19) Write a program to display an inverted half pyramid using a stars pattern.
+Solution:
+#include <stdio.h>
+int main() {
+    int rows;
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+    for (int i = rows; i >= 1; i--) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+(20) Write a program to display a full pyramid using a stars pattern.
+Solution:
+#include <stdio.h>
+int main() {
+    int rows, spaces;
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+    spaces = rows - 1;
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= spaces; j++) {
+            printf(" ");
+        }
+        spaces--;
+        for (int j = 1; j <= 2 * i - 1; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+(21) Write a program to display a cross or X-shape using a stars pattern.
+Solution:
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the size of the cross: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            if (j == i || j == n - i + 1) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
