@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1698161543 source:c:\users\geno\documents\start_up\lineeditor\main.c
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+
